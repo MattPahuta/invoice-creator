@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Creator</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+  <div class="container">
+
+  <header>
+    <h1>Invoice Creator</h1>
+    <p>Thanks for choosing EvilCorp, LLC!</p>
+  </header>
+  <main>
+    <div class="services-container grid">
+      <button class="service-btn">Wash Car: $10</button>
+      <button class="service-btn">Mow Lawn: $20</button>
+      <button class="service-btn">Pull Weeds: $30</button>
+    </div>
+
+    <div class="task-container flex">
+
+      <div class="task-items-container flex">
+        <div class="task-items-header flex">
+          <h2>Task</h2>
+          <h2>Total</h2>
+        </div>
+        <div class="task-list-container">
+          <ul class="task-list flex">
+            <li class="task-item grid"><span class="task-item-name">Mow Lawn<button class="remove-btn">Remove</button></span><span class="task-item-cost">$10</span></li>
+            <li class="task-item grid"><span class="task-item-name">Mow Lawn<button class="remove-btn">Remove</button></span><span class="task-item-cost">$10</span></li>
+            <li class="task-item grid"><span class="task-item-name">Mow Lawn<button class="remove-btn">Remove</button></span><span class="task-item-cost">$10</span></li>
+          </ul>
+        </div>
+
+        <div class="total-container grid">
+
+          <div class="notes">
+            <h3>NOTES</h3>
+            <p class="note">We accept cash, credit, or PayPal</p>
+          </div>
+
+          <div class="total-amount">
+            <h3>TOTAL AMOUNT</h3>
+            <p>$<span id="total">0</span></p>
+          </div>
+
+        </div>
+      </div>
+
+      <form action="">
+        <button class="submit-btn">Send invoice</button>
+      </form>
+    </div>
+
+  </main>
+  </div>
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
