@@ -10,7 +10,7 @@ This is a solution to the Invoice Creator solo project, as part of the Scrimba F
 - Buttons to add service to array 
 - Place to display data from array - updated every time the array changes
 - Don't charge more than once for same service
-- Total cost stays updated (local storage)
+- Total cost stays updated (local storage?)
 - Button to 'send invoice' (just a form reset)
 - Stretch: add 'remove' action to remove added items
 
@@ -19,3 +19,5 @@ This is a solution to the Invoice Creator solo project, as part of the Scrimba F
 - Semantic HTML5 markup
 - Flexbox
 - Vanilla JavaScript
+- localStorage
+- CustumEvents
