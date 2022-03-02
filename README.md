@@ -18,6 +18,5 @@ This is a solution to the Invoice Creator solo project, as part of the Scrimba F
 
 - Semantic HTML5 markup
 - Flexbox
+- CSS Grid
 - Vanilla JavaScript
-- localStorage
-- CustumEvents
