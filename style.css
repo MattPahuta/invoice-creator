@@ -209,3 +209,7 @@ main {
 .submit-btn:active {
   transform: translate(0, 0.3rem);
 }
+
+.envelope-icon {
+  margin-right: .75rem;
+}

@@ -32,24 +32,18 @@ function addRemoveBtnListener(removeBtns) {
 }
 
 function removeTask(e) {
-  console.log('task removed!');
-  console.log(e.target.id);
-  console.log(typeof(e.target.id))
   // filter out task that's being deleted
   selectedTasks = selectedTasks.filter(task => task.cost !== e.target.id);
-  console.log(selectedTasks);
   // remove the task from the DOM
   e.target.parentElement.parentElement.remove();
   // update total
   total -= (e.target.id);
-  console.log(`The updated total is: ${total}`);
   totalCost.textContent = total;
 }
 
 
 // add selected services to array
 function addService(e) {
-  console.log(e.target);
   // build the service object
   const service = {
     name: e.target.name,
@@ -66,10 +60,8 @@ function addService(e) {
   // push selected service to selectedTasks array
   selectedTasks.push(service); // use this to calculate total
   displayTask(); // call displayTask to add to DOM
-  console.log(selectedTasks);
   // add service cost to total
   total += parseInt(service.cost);
-  console.log(`The updated total is: ${total}`);
   // update total on DOM
   totalCost.textContent = total;
 }
@@ -88,6 +80,10 @@ serviceBtns.forEach(btn => {
 
 invoiceForm.addEventListener('submit', function(e) {
   e.preventDefault();
+  if (!total) {
+    alert('Please add a service.');
+    return;
+  }
   alert('Invoice submitted!');
   clearInvoice();
 });
