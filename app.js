@@ -2,22 +2,17 @@ const invoiceForm = document.querySelector('.invoice-form');
 const taskList = document.querySelector('.task-list');
 const serviceBtns = document.querySelectorAll('.service-btn');
 const removeBtns = document.querySelectorAll('.remove-btn');
+const totalCost = document.querySelector('#total');
 // array to hold the state
 let selectedTasks = [];
-
-// const wash = document.getElementById('wash');
-// const mow = document.getElementById('mow');
-// const weed = document.getElementById('weed');
-
-const services = document.querySelector('.services-container');
-
+let total = 0;
 
 function displayTask() {
   const html = selectedTasks.map(service => {
     return `<li class="task-item grid">
               <span class="task-item-name">
               ${service.name}
-              <button  class="remove-btn">Remove</button>
+              <button id="${service.cost}"class="remove-btn">Remove</button>
               </span>
               <span class="task-item-cost">$${service.cost}</span>
             </li>
@@ -27,6 +22,7 @@ function displayTask() {
   taskList.innerHTML = html;
   const removeBtns = document.querySelectorAll('.remove-btn');
   addRemoveBtnListener(removeBtns);
+
 }
 
 function addRemoveBtnListener(removeBtns) {
@@ -37,13 +33,21 @@ function addRemoveBtnListener(removeBtns) {
 
 function removeTask(e) {
   console.log('task removed!');
+  console.log(e.target.id);
+  console.log(typeof(e.target.id))
+  // filter out task that's being deleted
+  selectedTasks = selectedTasks.filter(task => task.cost !== e.target.id);
+  console.log(selectedTasks);
+  // remove the task from the DOM
+  e.target.parentElement.parentElement.remove();
+  // update total
+  total -= (e.target.id);
+  console.log(`The updated total is: ${total}`);
+  totalCost.textContent = total;
 }
 
-function calculateTotal() {
 
-}
-
-
+// add selected services to array
 function addService(e) {
   console.log(e.target);
   // build the service object
@@ -63,19 +67,28 @@ function addService(e) {
   selectedTasks.push(service); // use this to calculate total
   displayTask(); // call displayTask to add to DOM
   console.log(selectedTasks);
+  // add service cost to total
+  total += parseInt(service.cost);
+  console.log(`The updated total is: ${total}`);
+  // update total on DOM
+  totalCost.textContent = total;
+}
+
+function clearInvoice() {
+  total = 0;
+  selectedTasks = [];
+  taskList.innerHTML = ''
+  totalCost.textContent = '0';
 }
 
 // add event listener to service buttons
 serviceBtns.forEach(btn => {
   btn.addEventListener('click', addService);
-})
-// removeBtns.forEach(btn => {
-//   btn.addEventListener('click', removeTask);
-// })
+});
 
 invoiceForm.addEventListener('submit', function(e) {
   e.preventDefault();
   alert('Invoice submitted!');
-  
-})
+  clearInvoice();
+});
 
