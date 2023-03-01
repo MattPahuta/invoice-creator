@@ -96,7 +96,7 @@ main {
 .service-btn {
   padding: 0.55rem 1.25rem;
   font-family: inherit;
-  font-size: var(--fs-300);
+  font-size: var(--fs-400);
   border: none;
   border-radius: 5px;
   color: var(--clr-black);
