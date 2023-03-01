@@ -1,5 +1,5 @@
-const invoiceForm = document.querySelector('.invoice-form');
-const taskList = document.querySelector('.task-list');
+const invoiceForm = document.querySelector('#invoice-form');
+const taskList = document.querySelector('#task-list');
 const serviceBtns = document.querySelectorAll('.service-btn');
 const removeBtns = document.querySelectorAll('.remove-btn');
 const totalCost = document.querySelector('#total');

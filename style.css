@@ -59,8 +59,9 @@ body {
 }
 
 .container {
-  width: 550px;
+  width: 575px;
   margin-inline: auto;
+  border: 5px solid white;
 }
 
 header {
@@ -94,9 +95,9 @@ main {
 }
 
 .service-btn {
-  padding: 0.55rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   font-family: inherit;
-  font-size: var(--fs-300);
+  font-size: var(--fs-400);
   border: none;
   border-radius: 5px;
   color: var(--clr-black);
@@ -105,13 +106,11 @@ main {
   cursor: pointer;
 }
 
-
 .service-btn:hover,
 .service-btn:active {
   color: var(--clr-dk-blue);
   outline: var(--clr-white);
 }
-
 
 .task-container,
 .task-items-container,
@@ -168,7 +167,6 @@ main {
   line-height: 1;
 }
 
-
 .total-container {
 	grid-template-columns: auto auto;
 	border-top: 1px solid var(--clr-accent);
@@ -191,9 +189,9 @@ main {
 
 .submit-btn {
   width: 100%;
-  padding: 0.55rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   font-family: inherit;
-  font-size: var(--fs-300);
+  font-size: var(--fs-400);
   border: none;
   border-radius: 5px;
   color: var(--clr-white);
